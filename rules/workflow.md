@@ -4,23 +4,23 @@
 
 For any new feature or fix, skills fire in this order — do not skip steps:
 
-1. **`superpowers:brainstorming`** — always first. Explores intent, asks clarifying questions, surfaces unstated requirements. Fires when a feature or fix is described.
-2. **`superpowers:writing-plans`** — after brainstorming. Produces the plan document. User reviews and approves before any code is written.
-3. **`superpowers:executing-plans`** — after plan approval. Works through the plan with PR-level checkpoints. One PR per logical chunk.
+1. **`jpegg:evaluate`** — always first. Explores intent, asks clarifying questions, surfaces unstated requirements. Fires when a feature or fix is described.
+2. **`jpegg:blueprint`** — after evaluation. Produces the plan document. User reviews and approves before any code is written.
+3. **`jpegg:build`** — after plan approval. Works through the plan with PR-level checkpoints. One PR per logical chunk.
 
 Within each implementation chunk:
 
-4. **`superpowers:using-git-worktrees`** — before writing code. Creates an isolated workspace for the branch.
-5. **`superpowers:test-driven-development`** — before writing implementation code. Tests first, always.
-6. **`superpowers:verification-before-completion`** — before claiming done. Runs verification commands, reads actual output.
-7. **`superpowers:requesting-code-review`** — before opening the PR. Internal review pass first.
-8. **`draft-pr-management`** — when creating a PR in a stack. Downstream PRs are draft; promote on base merge.
-9. **`ci-watch-and-fix`** — after PR creation. Monitors CI and fixes failures before reporting back.
-10. **`stack-state`** — after every PR creation or merge. Updates `.claude/stack.json`.
+4. **`jpegg:worktree`** — before writing code. Creates an isolated workspace for the branch.
+5. **`jpegg:test-first`** — before writing implementation code. Tests first, always.
+6. **`jpegg:pre-ship`** — before claiming done. Runs verification commands, reads actual output.
+7. **`jpegg:seek-review`** — before opening the PR. Internal review pass first.
+8. **`jpegg:draft-prs`** — when creating a PR in a stack. Downstream PRs are draft; promote on base merge.
+9. **`jpegg:ci-loop`** — after PR creation. Monitors CI and fixes failures before reporting back.
+10. **`jpegg:pr-stack`** — after every PR creation or merge. Updates `.claude/stack.json`.
 
 When receiving feedback on an open PR:
 
-11. **`superpowers:receiving-code-review`** — fires before implementing any review comment. Evaluates feedback before acting.
+11. **`jpegg:handle-review`** — fires before implementing any review comment. Evaluates feedback before acting.
 
 ## Stacked PR Workflow
 
