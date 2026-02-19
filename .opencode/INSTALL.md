@@ -1,4 +1,4 @@
-# Installing Superpowers for OpenCode
+# Installing buildwithjpegg for OpenCode
 
 ## Prerequisites
 
@@ -7,10 +7,10 @@
 
 ## Installation Steps
 
-### 1. Clone Superpowers
+### 1. Clone buildwithjpegg
 
 ```bash
-git clone https://github.com/obra/superpowers.git ~/.config/opencode/superpowers
+git clone https://github.com/buildwithjpegg/buildwithjpegg.git ~/.config/opencode/buildwithjpegg
 ```
 
 ### 2. Register the Plugin
@@ -19,25 +19,25 @@ Create a symlink so OpenCode discovers the plugin:
 
 ```bash
 mkdir -p ~/.config/opencode/plugins
-rm -f ~/.config/opencode/plugins/superpowers.js
-ln -s ~/.config/opencode/superpowers/.opencode/plugins/superpowers.js ~/.config/opencode/plugins/superpowers.js
+rm -f ~/.config/opencode/plugins/buildwithjpegg.js
+ln -s ~/.config/opencode/buildwithjpegg/.opencode/plugins/buildwithjpegg.js ~/.config/opencode/plugins/buildwithjpegg.js
 ```
 
 ### 3. Symlink Skills
 
-Create a symlink so OpenCode's native skill tool discovers superpowers skills:
+Create a symlink so OpenCode's native skill tool discovers buildwithjpegg skills:
 
 ```bash
 mkdir -p ~/.config/opencode/skills
-rm -rf ~/.config/opencode/skills/superpowers
-ln -s ~/.config/opencode/superpowers/skills ~/.config/opencode/skills/superpowers
+rm -rf ~/.config/opencode/skills/buildwithjpegg
+ln -s ~/.config/opencode/buildwithjpegg/skills ~/.config/opencode/skills/buildwithjpegg
 ```
 
 ### 4. Restart OpenCode
 
-Restart OpenCode. The plugin will automatically inject superpowers context.
+Restart OpenCode. The plugin will automatically inject buildwithjpegg context.
 
-Verify by asking: "do you have superpowers?"
+Verify by asking: "do you have buildwithjpegg?"
 
 ## Usage
 
@@ -54,7 +54,7 @@ use skill tool to list skills
 Use OpenCode's native `skill` tool to load a specific skill:
 
 ```
-use skill tool to load superpowers/brainstorming
+use skill tool to load buildwithjpegg/evaluate
 ```
 
 ### Personal Skills
@@ -82,12 +82,12 @@ description: Use when [condition] - [what it does]
 
 Create project-specific skills in `.opencode/skills/` within your project.
 
-**Skill Priority:** Project skills > Personal skills > Superpowers skills
+**Skill Priority:** Project skills > Personal skills > buildwithjpegg skills
 
 ## Updating
 
 ```bash
-cd ~/.config/opencode/superpowers
+cd ~/.config/opencode/buildwithjpegg
 git pull
 ```
 
@@ -95,25 +95,24 @@ git pull
 
 ### Plugin not loading
 
-1. Check plugin symlink: `ls -l ~/.config/opencode/plugins/superpowers.js`
-2. Check source exists: `ls ~/.config/opencode/superpowers/.opencode/plugins/superpowers.js`
+1. Check plugin symlink: `ls -l ~/.config/opencode/plugins/buildwithjpegg.js`
+2. Check source exists: `ls ~/.config/opencode/buildwithjpegg/.opencode/plugins/buildwithjpegg.js`
 3. Check OpenCode logs for errors
 
 ### Skills not found
 
-1. Check skills symlink: `ls -l ~/.config/opencode/skills/superpowers`
-2. Verify it points to: `~/.config/opencode/superpowers/skills`
+1. Check skills symlink: `ls -l ~/.config/opencode/skills/buildwithjpegg`
+2. Verify it points to: `~/.config/opencode/buildwithjpegg/skills`
 3. Use `skill` tool to list what's discovered
 
 ### Tool mapping
 
 When skills reference Claude Code tools:
-- `TodoWrite` → `update_plan`
-- `Task` with subagents → `@mention` syntax
-- `Skill` tool → OpenCode's native `skill` tool
-- File operations → your native tools
+- `TodoWrite` -> `update_plan`
+- `Task` with subagents -> `@mention` syntax
+- `Skill` tool -> OpenCode's native `skill` tool
+- File operations -> your native tools
 
 ## Getting Help
 
-- Report issues: https://github.com/obra/superpowers/issues
-- Full documentation: https://github.com/obra/superpowers/blob/main/docs/README.opencode.md
+- Report issues: https://github.com/buildwithjpegg/buildwithjpegg/issues
