@@ -23,7 +23,7 @@ Because the skills trigger automatically, you don't need to do anything special.
 In Claude Code, register the marketplace first:
 
 ```bash
-/plugin marketplace add buildwithjpegg/buildwithjpegg-marketplace
+/plugin marketplace add jpeggdev/buildwithjpegg-marketplace
 ```
 
 Then install the plugin:
@@ -41,7 +41,7 @@ Start a new session and ask Claude to help with something that would trigger a s
 Tell Codex:
 
 ```
-Fetch and follow instructions from https://raw.githubusercontent.com/buildwithjpegg/buildwithjpegg/refs/heads/main/.codex/INSTALL.md
+Fetch and follow instructions from https://raw.githubusercontent.com/jpeggdev/buildwithjpegg/refs/heads/main/.codex/INSTALL.md
 ```
 
 **Detailed docs:** [.codex/INSTALL.md](.codex/INSTALL.md)
@@ -51,7 +51,7 @@ Fetch and follow instructions from https://raw.githubusercontent.com/buildwithjp
 Tell OpenCode:
 
 ```
-Fetch and follow instructions from https://raw.githubusercontent.com/buildwithjpegg/buildwithjpegg/refs/heads/main/.opencode/INSTALL.md
+Fetch and follow instructions from https://raw.githubusercontent.com/jpeggdev/buildwithjpegg/refs/heads/main/.opencode/INSTALL.md
 ```
 
 **Detailed docs:** [.opencode/INSTALL.md](.opencode/INSTALL.md)
@@ -131,4 +131,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## Support
 
-- **Issues**: https://github.com/buildwithjpegg/buildwithjpegg/issues
+- **Issues**: https://github.com/jpeggdev/buildwithjpegg/issues

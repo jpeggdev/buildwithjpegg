@@ -10,7 +10,7 @@ Enable buildwithjpegg skills in Codex via native skill discovery. Just clone and
 
 1. **Clone the buildwithjpegg repository:**
    ```bash
-   git clone https://github.com/buildwithjpegg/buildwithjpegg.git ~/.codex/buildwithjpegg
+   git clone https://github.com/jpeggdev/buildwithjpegg.git ~/.codex/buildwithjpegg
    ```
 
 2. **Create the skills symlink:**
