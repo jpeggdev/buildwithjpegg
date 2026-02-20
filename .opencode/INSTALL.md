@@ -10,7 +10,7 @@
 ### 1. Clone buildwithjpegg
 
 ```bash
-git clone https://github.com/buildwithjpegg/buildwithjpegg.git ~/.config/opencode/buildwithjpegg
+git clone https://github.com/jpeggdev/buildwithjpegg.git ~/.config/opencode/buildwithjpegg
 ```
 
 ### 2. Register the Plugin
@@ -115,4 +115,4 @@ When skills reference Claude Code tools:
 
 ## Getting Help
 
-- Report issues: https://github.com/buildwithjpegg/buildwithjpegg/issues
+- Report issues: https://github.com/jpeggdev/buildwithjpegg/issues

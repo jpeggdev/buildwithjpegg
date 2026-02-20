@@ -1,0 +1,39 @@
+{
+  "name": "buildwithjpegg",
+  "version": "1.0.0",
+  "description": "Development workflow skills for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
+  "author": "jpegg",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpeggdev/buildwithjpegg.git"
+  },
+  "homepage": "https://github.com/jpeggdev/buildwithjpegg",
+  "bugs": {
+    "url": "https://github.com/jpeggdev/buildwithjpegg/issues"
+  },
+  "keywords": [
+    "claude-code",
+    "skills",
+    "tdd",
+    "debugging",
+    "collaboration",
+    "best-practices",
+    "workflows",
+    "ai-agent"
+  ],
+  "files": [
+    "agents/",
+    "commands/",
+    "hooks/",
+    "lib/",
+    "rules/",
+    "skills/",
+    ".claude-plugin/",
+    ".codex/",
+    ".opencode/",
+    "LICENSE",
+    "README.md",
+    "RELEASE-NOTES.md"
+  ]
+}

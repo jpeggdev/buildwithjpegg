@@ -98,8 +98,8 @@ mkdir -p .claude-plugin
   "author": {
     "name": "jpegg"
   },
-  "homepage": "https://github.com/buildwithjpegg/buildwithjpegg",
-  "repository": "https://github.com/buildwithjpegg/buildwithjpegg",
+  "homepage": "https://github.com/jpeggdev/buildwithjpegg",
+  "repository": "https://github.com/jpeggdev/buildwithjpegg",
   "license": "MIT",
   "keywords": ["skills", "tdd", "debugging", "collaboration", "best-practices", "workflows"]
 }
