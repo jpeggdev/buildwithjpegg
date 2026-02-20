@@ -1,6 +1,6 @@
 {
   "name": "buildwithjpegg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Development workflow skills for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
   "author": "jpegg",
   "license": "MIT",
