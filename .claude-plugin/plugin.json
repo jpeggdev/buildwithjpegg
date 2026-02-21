@@ -1,9 +1,9 @@
 {
   "name": "buildwithjpegg",
   "description": "Development workflow skills for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
-    "name": "jpegg"
+    "name": "jpeggdev"
   },
   "homepage": "https://github.com/jpeggdev/buildwithjpegg",
   "repository": "https://github.com/jpeggdev/buildwithjpegg",

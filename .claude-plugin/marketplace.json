@@ -2,16 +2,16 @@
   "name": "buildwithjpegg",
   "description": "Development workflow skills for Claude Code",
   "owner": {
-    "name": "jpegg"
+    "name": "jpeggdev"
   },
   "plugins": [
     {
       "name": "buildwithjpegg",
       "description": "Development workflow skills for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": "./",
       "author": {
-        "name": "jpegg"
+        "name": "jpeggdev"
       }
     }
   ]
