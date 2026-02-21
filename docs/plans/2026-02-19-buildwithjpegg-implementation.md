@@ -465,7 +465,6 @@ git add skills/onboard/ && git commit -m "feat: port onboard skill (was using-su
 ```markdown
 ---
 description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores requirements and design before implementation."
-disable-model-invocation: true
 ---
 
 Invoke the jpegg:evaluate skill and follow it exactly as presented to you
@@ -476,7 +475,6 @@ Invoke the jpegg:evaluate skill and follow it exactly as presented to you
 ```markdown
 ---
 description: Create detailed implementation plan with bite-sized tasks
-disable-model-invocation: true
 ---
 
 Invoke the jpegg:blueprint skill and follow it exactly as presented to you
@@ -487,7 +485,6 @@ Invoke the jpegg:blueprint skill and follow it exactly as presented to you
 ```markdown
 ---
 description: Execute plan in batches with review checkpoints
-disable-model-invocation: true
 ---
 
 Invoke the jpegg:build skill and follow it exactly as presented to you

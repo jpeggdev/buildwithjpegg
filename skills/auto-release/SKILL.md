@@ -1,7 +1,6 @@
 ---
 name: auto-release
 description: One-time setup that wires semantic-release into a repository for automated versioning, changelog generation, and GitHub releases from conventional commits. Use when setting up a new repo that will be publicly released.
-disable-model-invocation: true
 ---
 
 # Semantic Release Setup
