@@ -1,28 +1,29 @@
 {
-    "name": "buildwithjpegg.dev",
-    "owner": {
-        "name": "Jeff Pegg",
-        "email": "owner@jpegg.dev"
-    },
-    "metadata": {
-        "description": "A collection of plugins for developers",
-        "version": "1.0.0",
-        "pluginRoot": "./plugins"
-    },
-    "plugins": [
-        {
-            "name": "development-workflow",
-            "source": {
-                "source": "github",
-                "repo": "jpeggdev/development-workflow-plugin"
-            }
-        },
-        {
-            "name": "genai-xskills.ai",
-            "source": {
-                "source": "github",
-                "repo": "jpeggdev/genai-xskills.ai-plugin"
-            }
-        }
-    ]
+	"$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+	"name": "buildwithjpegg.dev",
+	"version": "1.0.0",
+	"description": "A collection of plugins made by Jeff Pegg for developers",
+	"owner": {
+		"name": "jpegg.dev",
+		"email": "owner@jpegg.dev"
+	},
+	"plugins": [
+		{
+			"name": "development-workflow",
+			"description": "A plugin to help developers with their workflow, including code generation, debugging, and documentation.",
+			"source": "./plugins/development-workflow",
+			"category": "development"
+		},
+		{
+			"name": "genai-xskills.ai",
+			"description": "A plugin that provides access to GenAI XSkills, a platform for learning and improving AI skills.",
+			"version": "1.0.0",
+			"author": {
+				"name": "Jeff Pegg",
+				"email": "buildwith@jpegg.dev"
+			},
+			"source": "./plugins/genai-xskills",
+			"category": "video"
+		}
+	]
 }

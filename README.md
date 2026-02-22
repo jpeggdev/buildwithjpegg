@@ -26,3 +26,7 @@ Then install any plugin:
 ## License
 
 MIT License -- see [LICENSE](LICENSE) for details.
+
+## Source
+
+GitHub repository - [buildwithjpegg](https://github.com/jpeggdev/buildwithjpegg)
