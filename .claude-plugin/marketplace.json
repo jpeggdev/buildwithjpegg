@@ -1,0 +1,28 @@
+{
+    "name": "buildwithjpegg.dev",
+    "owner": {
+        "name": "Jeff Pegg",
+        "email": "owner@jpegg.dev"
+    },
+    "metadata": {
+        "description": "A collection of plugins for developers",
+        "version": "1.0.0",
+        "pluginRoot": "./plugins"
+    },
+    "plugins": [
+        {
+            "name": "development-workflow",
+            "source": {
+                "source": "github",
+                "repo": "jpeggdev/development-workflow-plugin"
+            }
+        },
+        {
+            "name": "genai-xskills.ai",
+            "source": {
+                "source": "github",
+                "repo": "jpeggdev/genai-xskills.ai-plugin"
+            }
+        }
+    ]
+}
