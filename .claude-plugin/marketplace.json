@@ -2,7 +2,9 @@
 	"$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
 	"name": "buildwithjpegg.dev",
 	"version": "1.0.0",
-	"description": "A collection of plugins made by Jeff Pegg for developers",
+	"metadata": {
+		"description": "A collection of plugins made by Jeff Pegg for developers"
+	},
 	"owner": {
 		"name": "jpegg.dev",
 		"email": "owner@jpegg.dev"
@@ -22,7 +24,7 @@
 				"name": "Jeff Pegg",
 				"email": "buildwith@jpegg.dev"
 			},
-			"source": "./plugins/genai-xskills",
+			"source": "./plugins/genai-xskills.ai",
 			"category": "video"
 		}
 	]
