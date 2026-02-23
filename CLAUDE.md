@@ -12,7 +12,7 @@ A marketplace registry for Claude Code plugins. This repo is the index -- it doe
 .claude-plugin/marketplace.json  -- Plugin registry manifest
 plugins/                         -- Symlinks to local plugin repos
   development-workflow/          -> /c/code/buildwithjpegg/development-workflow/
-  genai-xskills.ai/              -> /c/code/buildwithjpegg/genai-xskills.ai/
+  video-creation/                -> /c/code/buildwithjpegg/video-creation/
 ```
 
 ## Key File: marketplace.json

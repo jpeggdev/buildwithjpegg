@@ -17,14 +17,14 @@
 			"category": "development"
 		},
 		{
-			"name": "genai-xskills.ai",
+			"name": "video-creation",
 			"description": "AI video generation pipeline: storyboard, keyframe images, video synthesis, and HTML gallery. Powered by xskills.ai.",
 			"version": "1.1.0",
 			"author": {
 				"name": "Jeff Pegg",
 				"email": "buildwith@jpegg.dev"
 			},
-			"source": "./plugins/genai-xskills.ai",
+			"source": "./plugins/video-creation",
 			"category": "video"
 		}
 	]
