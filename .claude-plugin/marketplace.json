@@ -13,7 +13,7 @@
 		{
 			"name": "development-workflow",
 			"description": "A plugin to help developers with their workflow, including code generation, debugging, and documentation.",
-			"source": "./plugins/development-workflow",
+			"source": "./development-workflow",
 			"category": "development"
 		},
 		{
@@ -24,7 +24,7 @@
 				"name": "Jeff Pegg",
 				"email": "buildwith@jpegg.dev"
 			},
-			"source": "./plugins/video-creation",
+			"source": "./video-creation",
 			"category": "video"
 		}
 	]
