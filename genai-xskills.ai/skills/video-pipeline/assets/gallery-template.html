@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{PROJECT_TITLE}} - Video Project Gallery</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+
+    .header {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #222;
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    .section {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .section h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #ccc;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #222;
+    }
+
+    /* Video Player */
+    .video-container {
+      background: #111;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .video-container video {
+      width: 100%;
+      display: block;
+    }
+
+    /* Image Carousel */
+    .carousel {
+      position: relative;
+      background: #111;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .carousel-viewport {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+
+    .carousel-slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+    }
+
+    .carousel-slide img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: #111;
+    }
+
+    .carousel-btn {
+      background: #222;
+      border: 1px solid #333;
+      color: #ccc;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+
+    .carousel-btn:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    .carousel-indicator {
+      color: #888;
+      font-size: 0.85rem;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .carousel-caption {
+      text-align: center;
+      padding: 0.75rem 1rem;
+      color: #999;
+      font-size: 0.85rem;
+      background: #111;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    /* Thumbnail Strip */
+    .thumbnails {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: #111;
+      overflow-x: auto;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .thumb {
+      flex-shrink: 0;
+      width: 80px;
+      height: 45px;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      opacity: 0.5;
+      transition: opacity 0.2s, border-color 0.2s;
+    }
+
+    .thumb.active {
+      border-color: #4a9eff;
+      opacity: 1;
+    }
+
+    .thumb:hover {
+      opacity: 0.8;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .stat {
+      background: #111;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: #444;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>{{PROJECT_TITLE}}</h1>
+    <p>Generated with genai-xskills.ai</p>
+  </div>
+
+  <div class="section">
+    <h2>Video</h2>
+    <div class="video-container">
+      <video controls preload="metadata">
+        <source src="{{VIDEO_SRC}}" type="video/mp4">
+        Video not supported.
+      </video>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Keyframe Images</h2>
+    <div class="carousel">
+      <div class="carousel-viewport" id="carouselViewport">
+        <!-- Slides injected by JS -->
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn" aria-label="Previous image">&larr;</button>
+        <span class="carousel-indicator" id="indicator">1 / 1</span>
+        <button class="carousel-btn" id="nextBtn" aria-label="Next image">&rarr;</button>
+      </div>
+      <div class="thumbnails" id="thumbnails">
+        <!-- Thumbnails injected by JS -->
+      </div>
+      <div class="carousel-caption" id="caption"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Project Stats</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value" id="statImages">0</div>
+        <div class="stat-label">Images</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="statVideos">0</div>
+        <div class="stat-label">Videos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="statCredits">0</div>
+        <div class="stat-label">Credits Used</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Powered by xskills.ai
+  </div>
+
+  <script>
+    // {{IMAGES_JSON}} should be replaced with an array of objects:
+    // [{"src": "images/shot-01.png", "caption": "Shot 1: description"}, ...]
+    const images = {{IMAGES_JSON}};
+    const totalCredits = {{TOTAL_CREDITS}};
+    const totalVideos = {{TOTAL_VIDEOS}};
+
+    // Stats
+    document.getElementById("statImages").textContent = images.length;
+    document.getElementById("statVideos").textContent = totalVideos;
+    document.getElementById("statCredits").textContent = totalCredits;
+
+    // Carousel
+    const viewport = document.getElementById("carouselViewport");
+    const thumbs = document.getElementById("thumbnails");
+    const indicator = document.getElementById("indicator");
+    const caption = document.getElementById("caption");
+    let current = 0;
+
+    images.forEach((img, i) => {
+      // Slide
+      const slide = document.createElement("div");
+      slide.className = "carousel-slide" + (i === 0 ? " active" : "");
+      slide.innerHTML = '<img src="' + img.src + '" alt="' + (img.caption || "Shot " + (i + 1)) + '">';
+      viewport.appendChild(slide);
+
+      // Thumbnail
+      const thumb = document.createElement("div");
+      thumb.className = "thumb" + (i === 0 ? " active" : "");
+      thumb.innerHTML = '<img src="' + img.src + '" alt="Thumbnail ' + (i + 1) + '">';
+      thumb.addEventListener("click", () => goTo(i));
+      thumbs.appendChild(thumb);
+    });
+
+    function goTo(index) {
+      const slides = viewport.querySelectorAll(".carousel-slide");
+      const thumbEls = thumbs.querySelectorAll(".thumb");
+      slides[current].classList.remove("active");
+      thumbEls[current].classList.remove("active");
+      current = (index + images.length) % images.length;
+      slides[current].classList.add("active");
+      thumbEls[current].classList.add("active");
+      indicator.textContent = (current + 1) + " / " + images.length;
+      caption.textContent = images[current].caption || "";
+    }
+
+    document.getElementById("prevBtn").addEventListener("click", () => goTo(current - 1));
+    document.getElementById("nextBtn").addEventListener("click", () => goTo(current + 1));
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") goTo(current - 1);
+      if (e.key === "ArrowRight") goTo(current + 1);
+    });
+
+    // Initialize
+    if (images.length > 0) {
+      indicator.textContent = "1 / " + images.length;
+      caption.textContent = images[0].caption || "";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "genai-xskills.ai",
+  "description": "AI video generation pipeline: storyboard, keyframe images, video synthesis, and HTML gallery. Powered by xskills.ai.",
+  "version": "1.1.0",
+  "author": {
+    "name": "jpeggdev"
+  },
+  "repository": "https://github.com/jpeggdev/genai-xskills.ai-plugin",
+  "license": "MIT",
+  "keywords": ["skills", "genai", "image", "video", "storyboard", "xskills.ai"]
+}

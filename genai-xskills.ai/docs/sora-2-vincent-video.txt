@@ -1,0 +1,135 @@
+# Sora 2 文生视频
+
+> OpenAI Sora 2 文生视频模型，支持 720p 分辨率，可生成带音频的高质量视频
+
+## 基本信息
+
+- **模型 ID**: `fal-ai/sora-2/text-to-video`
+- **任务类型**: t2v
+- **分类**: video
+
+## 定价
+
+- **基础价格**: 160 积分/次
+- **说明**: 按视频时长计费
+
+| 场景 | 价格 |
+|------|------|
+| 时长 4 | 160 积分 |
+| 时长 8 | 320 积分 |
+| 时长 12 | 480 积分 |
+
+## 参数
+
+| 参数名 | 类型 | 必填 | 描述 | 默认值 |
+|--------|------|------|------|--------|
+| `prompt` | string | 是 | 视频生成提示词 | - |
+| `duration` | integer | 否 | 视频时长（秒） | `4` |
+| `aspect_ratio` | string | 否 | 视频宽高比 | `"16:9"` |
+| `resolution` | string | 否 | 视频分辨率 | `"720p"` |
+| `model` | string | 否 | 模型版本 | `"sora-2"` |
+
+## API 调用
+
+### 认证
+
+```
+Authorization: Bearer sk-your-api-key
+```
+
+### 创建任务
+
+**POST** `https://api.sutui.cc/api/v3/tasks/create`
+
+```json
+{
+  "model": "fal-ai/sora-2/text-to-video",
+  "params": {
+    "prompt": "A beautiful sunset over the ocean, golden light reflecting on calm waters",
+    "duration": 4,
+    "model": "sora-2"
+  }
+}
+```
+
+### 查询任务
+
+**POST** `https://api.sutui.cc/api/v3/tasks/query`
+
+```json
+{
+  "task_id": "your-task-id"
+}
+```
+
+### cURL 示例
+
+```bash
+curl -X POST "https://api.sutui.cc/api/v3/tasks/create" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer sk-your-api-key" \
+  -d '{"model": "fal-ai/sora-2/text-to-video", "params": {"prompt": "A beautiful sunset over the ocean, golden light reflecting on calm waters", "duration": 4, "model": "sora-2"}}'
+```
+
+### Python 示例
+
+```python
+import requests, time
+
+url = "https://api.sutui.cc/api/v3/tasks/create"
+headers = {"Content-Type": "application/json", "Authorization": "Bearer sk-your-api-key"}
+payload = {
+    "model": "fal-ai/sora-2/text-to-video",
+    "params": {
+        "prompt": "A beautiful sunset over the ocean, golden light reflecting on calm waters",
+        "duration": 4,
+        "model": "sora-2"
+    }
+}
+
+resp = requests.post(url, json=payload, headers=headers)
+task_id = resp.json()["data"]["task_id"]
+
+while True:
+    r = requests.post("https://api.sutui.cc/api/v3/tasks/query", json={"task_id": task_id}, headers=headers)
+    task = r.json()["data"]
+    if task["status"] in ("completed", "success"):
+        print(task["result"])
+        break
+    elif task["status"] in ("failed", "error"):
+        print("Failed:", task.get("error"))
+        break
+    time.sleep(2)
+```
+
+### 响应格式
+
+创建任务成功：
+
+```json
+{
+  "code": 200,
+  "data": {
+    "task_id": "task_xxx",
+    "price": 10
+  }
+}
+```
+
+查询任务结果：
+
+```json
+{
+  "code": 200,
+  "data": {
+    "status": "completed",
+    "result": {
+      "output": {
+        "images": [
+          "https://..."
+        ]
+      }
+    }
+  }
+}
+```

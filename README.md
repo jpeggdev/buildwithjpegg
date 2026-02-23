@@ -7,7 +7,7 @@ A plugin marketplace for Claude Code. Browse, install, and manage developer work
 | Plugin | Description | Source |
 |-|-|-|
 | [development-workflow](https://github.com/jpeggdev/development-workflow-plugin) | Complete development workflow with composable skills -- design, TDD, code review, CI/CD, stacked PRs | GitHub |
-| [genai-xskills.ai](https://github.com/jpeggdev/genai-xskills.ai-plugin) | Generative AI skills | GitHub |
+| [genai-xskills.ai](https://github.com/jpeggdev/genai-xskills.ai-plugin) | AI video generation pipeline: storyboard, keyframe images, video synthesis, and HTML gallery | GitHub |
 
 ## Installation
 
