@@ -1,4 +1,4 @@
-# genai-xskills.ai
+# video-creation
 
 AI video generation pipeline for Claude Code. Go from concept to finished video project with storyboard planning, keyframe image generation, video synthesis, and an HTML gallery of all assets.
 
@@ -80,8 +80,8 @@ Open `gallery.html` in a browser to view the video and browse keyframe images in
 
 All models use the same API pattern:
 
-- **Create task**: `POST https://api.sutui.cc/api/v3/tasks/create`
-- **Query task**: `POST https://api.sutui.cc/api/v3/tasks/query`
+- **Create task**: `POST https://api.xskill.ai/api/v3/tasks/create`
+- **Query task**: `POST https://api.xskill.ai/api/v3/tasks/query`
 - **Auth**: `Authorization: Bearer $XSKILL_API_KEY`
 - **Model docs**: `https://api.xskill.ai/api/v3/models/<model-id>/llms.txt`
 

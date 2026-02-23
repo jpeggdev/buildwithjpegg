@@ -16,7 +16,7 @@
 
 set -euo pipefail
 
-API_BASE="https://api.sutui.cc/api/v3"
+API_BASE="https://api.xskill.ai/api/v3"
 PROMPT="${1:?Usage: generate-image.sh <prompt> [model] [image_size] [num_images]}"
 MODEL="${2:-fal-ai/flux-2/flash}"
 IMAGE_SIZE="${3:-landscape_4_3}"
@@ -87,7 +87,7 @@ print(data.get('data', {}).get('status', 'unknown'))
       python3 -c "
 import json, sys
 data = json.loads(sys.argv[1])
-print(json.dumps(data['data']['result'], indent=2))
+print(json.dumps(data['data']['output'], indent=2))
 " "$QUERY_RESPONSE"
       exit 0
       ;;

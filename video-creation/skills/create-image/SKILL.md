@@ -9,7 +9,7 @@ Generate images using the xskills.ai API. Primarily used to create keyframe/refe
 
 ## API Overview
 
-- **Base URL**: `https://api.sutui.cc/api/v3`
+- **Base URL**: `https://api.xskill.ai/api/v3`
 - **Auth**: `Authorization: Bearer $XSKILL_API_KEY`
 - **Pattern**: Create task -> poll status -> get result URLs
 - **Model docs**: `https://api.xskill.ai/api/v3/models/<model-id>/llms.txt`
@@ -79,7 +79,7 @@ Match the image size to the storyboard's aspect ratio.
 
 Create returns `{code: 200, data: {task_id, price}}`.
 
-Query with the task_id returns `{code: 200, data: {status, result: {output: {images: [urls]}}}}`.
+Query with the task_id returns `{code: 200, data: {status, output: {images: [{url, width, height}]}}}`.
 
 Status values: `completed`, `success` (done), `failed`, `error` (terminal).
 

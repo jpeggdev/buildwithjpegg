@@ -42,7 +42,7 @@ Authorization: Bearer sk-your-api-key
 
 ### 创建任务
 
-**POST** `https://api.sutui.cc/api/v3/tasks/create`
+**POST** `https://api.xskill.ai/api/v3/tasks/create`
 
 ```json
 {
@@ -57,7 +57,7 @@ Authorization: Bearer sk-your-api-key
 
 ### 查询任务
 
-**POST** `https://api.sutui.cc/api/v3/tasks/query`
+**POST** `https://api.xskill.ai/api/v3/tasks/query`
 
 ```json
 {
@@ -68,7 +68,7 @@ Authorization: Bearer sk-your-api-key
 ### cURL 示例
 
 ```bash
-curl -X POST "https://api.sutui.cc/api/v3/tasks/create" \
+curl -X POST "https://api.xskill.ai/api/v3/tasks/create" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer sk-your-api-key" \
   -d '{"model": "fal-ai/flux-2/flash", "params": {"prompt": "A beautiful sunset over the ocean, golden light reflecting on calm waters", "image_size": "landscape_4_3", "num_images": 1}}'
@@ -79,7 +79,7 @@ curl -X POST "https://api.sutui.cc/api/v3/tasks/create" \
 ```python
 import requests, time
 
-url = "https://api.sutui.cc/api/v3/tasks/create"
+url = "https://api.xskill.ai/api/v3/tasks/create"
 headers = {"Content-Type": "application/json", "Authorization": "Bearer sk-your-api-key"}
 payload = {
     "model": "fal-ai/flux-2/flash",
@@ -94,10 +94,10 @@ resp = requests.post(url, json=payload, headers=headers)
 task_id = resp.json()["data"]["task_id"]
 
 while True:
-    r = requests.post("https://api.sutui.cc/api/v3/tasks/query", json={"task_id": task_id}, headers=headers)
+    r = requests.post("https://api.xskill.ai/api/v3/tasks/query", json={"task_id": task_id}, headers=headers)
     task = r.json()["data"]
     if task["status"] in ("completed", "success"):
-        print(task["result"])
+        print(task["output"])
         break
     elif task["status"] in ("failed", "error"):
         print("Failed:", task.get("error"))
@@ -126,12 +126,15 @@ while True:
   "code": 200,
   "data": {
     "status": "completed",
-    "result": {
-      "output": {
-        "images": [
-          "https://..."
-        ]
-      }
+    "output": {
+      "images": [
+        {
+          "url": "https://...",
+          "width": 1024,
+          "height": 576,
+          "content_type": "image/png"
+        }
+      ]
     }
   }
 }

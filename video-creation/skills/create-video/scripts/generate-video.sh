@@ -17,7 +17,7 @@
 
 set -euo pipefail
 
-API_BASE="https://api.sutui.cc/api/v3"
+API_BASE="https://api.xskill.ai/api/v3"
 MODEL="${1:?Usage: generate-video.sh <model> <prompt> [ratio] [duration] [image_urls...]}"
 PROMPT="${2:?Usage: generate-video.sh <model> <prompt> [ratio] [duration] [image_urls...]}"
 RATIO="${3:-16:9}"
@@ -91,12 +91,13 @@ print(data['data'].get('price', 'unknown'))
 
 echo "Task created: $TASK_ID (cost: $PRICE credits)" >&2
 
-# Poll for completion -- video takes longer than images
+# Poll until terminal status -- no timeout, video generation can take 10+ minutes
 POLL_INTERVAL=5
-MAX_POLLS=60
+POLL_COUNT=0
 
-for i in $(seq 1 $MAX_POLLS); do
+while true; do
   sleep $POLL_INTERVAL
+  POLL_COUNT=$((POLL_COUNT + 1))
 
   QUERY_RESPONSE=$(curl -s -X POST "$API_BASE/tasks/query" \
     -H "Content-Type: application/json" \
@@ -115,7 +116,7 @@ print(data.get('data', {}).get('status', 'unknown'))
       python3 -c "
 import json, sys
 data = json.loads(sys.argv[1])
-print(json.dumps(data['data']['result'], indent=2))
+print(json.dumps(data['data']['output'], indent=2))
 " "$QUERY_RESPONSE"
       exit 0
       ;;
@@ -129,11 +130,8 @@ print(json.dumps(data.get('data', {}), indent=2))
       exit 1
       ;;
     *)
-      ELAPSED=$((i * POLL_INTERVAL))
-      echo "Polling ($i/$MAX_POLLS, ${ELAPSED}s elapsed)... status: $STATUS" >&2
+      ELAPSED=$((POLL_COUNT * POLL_INTERVAL))
+      echo "Polling (${ELAPSED}s elapsed)... status: $STATUS" >&2
       ;;
   esac
 done
-
-echo "Error: Timed out waiting for task $TASK_ID after $((MAX_POLLS * POLL_INTERVAL))s" >&2
-exit 1

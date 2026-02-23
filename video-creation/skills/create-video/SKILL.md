@@ -9,7 +9,7 @@ Generate AI video using the xskills.ai API. Supports text-to-video and image-to-
 
 ## API Overview
 
-- **Base URL**: `https://api.sutui.cc/api/v3`
+- **Base URL**: `https://api.xskill.ai/api/v3`
 - **Auth**: `Authorization: Bearer $XSKILL_API_KEY`
 - **Pattern**: Create task -> poll status -> get result URLs
 - **Model docs**: `https://api.xskill.ai/api/v3/models/<model-id>/llms.txt`
@@ -116,7 +116,7 @@ Create returns: `{code: 200, data: {task_id, price}}`
 
 Poll with task_id. Video generation takes 30-120 seconds depending on model and duration.
 
-Query returns: `{code: 200, data: {status, result: {output: {images: [video_urls]}}}}`
+Query returns: `{code: 200, data: {status, output: {images: [{url}]}}}`
 
 Note: Video URLs are returned in the `images` array despite being video files.
 
