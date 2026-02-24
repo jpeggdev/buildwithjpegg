@@ -4,6 +4,15 @@ AI video generation pipeline for Claude Code. Go from concept to finished video 
 
 Powered by the [xskills.ai](https://xskills.ai) API.
 
+## Installation
+
+Register the marketplace and install:
+
+```bash
+/plugin marketplace add jpeggdev/buildwithjpegg
+/plugin install video-creation
+```
+
 ## Prerequisites
 
 - **XSKILL_API_KEY**: Set as an environment variable. Get your key from xskills.ai.
@@ -87,4 +96,8 @@ All models use the same API pattern:
 
 ## License
 
-MIT
+MIT -- see [LICENSE](LICENSE) for details.
+
+## Support
+
+- **Issues:** [github.com/jpeggdev/buildwithjpegg/issues](https://github.com/jpeggdev/buildwithjpegg/issues)

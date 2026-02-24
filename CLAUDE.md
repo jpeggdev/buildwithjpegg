@@ -4,36 +4,56 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-A marketplace registry for Claude Code plugins. This repo is the index -- it does not contain plugin source code directly. Plugins live in separate repos and are linked here via symlinks for local development.
+A marketplace registry for Claude Code plugins. This is a monorepo -- plugin source code lives directly in `plugins/`.
+
+## Plugins
+
+### development-workflow (v1.0.1)
+
+Complete software development workflow with composable skills and automatic invocation. TDD, debugging, collaboration patterns, code review, CI/CD, stacked PRs.
+
+- **Path:** `plugins/development-workflow/`
+- **Components:** 18 skills, 3 slash commands (`/evaluate`, `/write-blueprint`, `/run-build`), 1 agent (code-reviewer), 8 rules, session-start hook
+- **Core flow:** evaluate -> blueprint -> delegate/build -> test-first -> seek-review -> wrap-up
+- **Also supports:** Codex and OpenCode (see plugin README)
+
+### video-creation (v1.1.0)
+
+AI video generation pipeline powered by xskills.ai. Storyboard planning, keyframe images, video synthesis, HTML gallery.
+
+- **Path:** `plugins/video-creation/`
+- **Skills:** create-storyboard, create-image, create-video, video-pipeline
+- **Requires:** `XSKILL_API_KEY` environment variable, Python 3, curl
+- **Models:** Flux 2 Flash, Seedream 4.5, Nano Banana Pro, Gemini 3 Pro (images); Seedance 2.0, Sora 2, WAN 2.6, Hailuo 2.3 (video)
 
 ## Structure
 
 ```
 .claude-plugin/marketplace.json  -- Plugin registry manifest
-plugins/                         -- Symlinks to local plugin repos
-  development-workflow/          -> /c/code/buildwithjpegg/development-workflow/
-  video-creation/                -> /c/code/buildwithjpegg/video-creation/
+plugins/
+  development-workflow/          -- Development workflow plugin source
+  video-creation/                -- Video creation plugin source
 ```
 
 ## Key File: marketplace.json
 
 The manifest at `.claude-plugin/marketplace.json` defines all registered plugins. Each entry has:
 - `name` -- plugin identifier
-- `source.source` -- origin type (currently `"github"`)
-- `source.repo` -- GitHub repo path (e.g., `jpeggdev/development-workflow-plugin`)
+- `description` -- short description
+- `source` -- local path to plugin directory
+- `category` -- plugin category
 
 ## Adding a Plugin
 
 1. Add an entry to the `plugins` array in `.claude-plugin/marketplace.json`
-2. Create a symlink in `plugins/` pointing to the local plugin repo
-3. The plugin repo must have its own `.claude-plugin/plugin.json` manifest
+2. Create the plugin directory under `plugins/`
+3. The plugin must have its own `.claude-plugin/plugin.json` manifest
 
 ## Development
 
-No build system, package manager, or tests -- this is a static JSON registry with symlinks. Changes are limited to editing `marketplace.json` and managing symlinks.
+No build system, package manager, or tests -- this is a static JSON registry. Changes are limited to editing `marketplace.json` and managing plugin directories.
 
 ## Gotchas
 
-- The `plugins/` directory contains symlinks, not actual code. Git tracks symlinks but the targets must exist locally for development.
-- On Windows, symlinks may require developer mode or elevated permissions.
-- Plugin repos are separate Git repositories with their own branches and release cycles.
+- Plugin source lives directly in `plugins/` (not symlinks). All code is in this monorepo.
+- Each plugin has its own `.claude-plugin/plugin.json` with name, version, and metadata.

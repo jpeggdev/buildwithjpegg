@@ -1,4 +1,4 @@
-# buildwithjpegg
+# development-workflow
 
 A complete software development workflow for your coding agents, built on composable skills and automatic invocation.
 
@@ -23,13 +23,13 @@ Because the skills trigger automatically, you don't need to do anything special.
 In Claude Code, register the marketplace first:
 
 ```bash
-/plugin marketplace add jpeggdev/buildwithjpegg-marketplace
+/plugin marketplace add jpeggdev/buildwithjpegg
 ```
 
 Then install the plugin:
 
 ```bash
-/plugin install buildwithjpegg@buildwithjpegg-marketplace
+/plugin install development-workflow
 ```
 
 ### Verify Installation
@@ -41,20 +41,16 @@ Start a new session and ask Claude to help with something that would trigger a s
 Tell Codex:
 
 ```
-Fetch and follow instructions from https://raw.githubusercontent.com/jpeggdev/buildwithjpegg/refs/heads/main/.codex/INSTALL.md
+Fetch and follow instructions from https://raw.githubusercontent.com/jpeggdev/buildwithjpegg/refs/heads/main/plugins/development-workflow/.codex/INSTALL.md
 ```
-
-**Detailed docs:** [.codex/INSTALL.md](.codex/INSTALL.md)
 
 ### OpenCode
 
 Tell OpenCode:
 
 ```
-Fetch and follow instructions from https://raw.githubusercontent.com/jpeggdev/buildwithjpegg/refs/heads/main/.opencode/INSTALL.md
+Fetch and follow instructions from https://raw.githubusercontent.com/jpeggdev/buildwithjpegg/refs/heads/main/plugins/development-workflow/.opencode/INSTALL.md
 ```
-
-**Detailed docs:** [.opencode/INSTALL.md](.opencode/INSTALL.md)
 
 ## The Basic Workflow
 
@@ -118,12 +114,12 @@ Fetch and follow instructions from https://raw.githubusercontent.com/jpeggdev/bu
 Skills update automatically when you update the plugin:
 
 ```bash
-/plugin update buildwithjpegg
+/plugin update development-workflow
 ```
 
 ## Acknowledgment
 
-buildwithjpegg is based on [superpowers](https://github.com/obra/superpowers) by Jesse Vincent, licensed under the MIT License. See [LICENSE](LICENSE) for details.
+development-workflow is based on [superpowers](https://github.com/obra/superpowers) by Jesse Vincent, licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## License
 
@@ -131,4 +127,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## Support
 
-- **Issues**: https://github.com/jpeggdev/buildwithjpegg/issues
+- **Issues:** [github.com/jpeggdev/buildwithjpegg/issues](https://github.com/jpeggdev/buildwithjpegg/issues)
