@@ -1,31 +1,31 @@
 {
-	"$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-	"name": "buildwithjpegg.dev",
-	"version": "1.0.0",
-	"metadata": {
-		"description": "A collection of plugins made by Jeff Pegg for developers"
-	},
-	"owner": {
-		"name": "jpegg.dev",
-		"email": "owner@jpegg.dev"
-	},
-	"plugins": [
-		{
-			"name": "development-workflow",
-			"description": "A plugin to help developers with their workflow, including code generation, debugging, and documentation.",
-			"source": "./plugins/development-workflow",
-			"category": "development"
-		},
-		{
-			"name": "video-creation",
-			"description": "AI video generation pipeline: storyboard, keyframe images, video synthesis, and HTML gallery. Powered by xskills.ai.",
-			"version": "1.1.0",
-			"author": {
-				"name": "Jeff Pegg",
-				"email": "buildwith@jpegg.dev"
-			},
-			"source": "./plugins/video-creation",
-			"category": "video"
-		}
-	]
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "buildwithjpegg",
+  "version": "1.0.0",
+  "metadata": {
+    "description": "A collection of plugins made by Jeff Pegg for developers"
+  },
+  "owner": {
+    "name": "jpegg.dev",
+    "email": "owner@jpegg.dev"
+  },
+  "plugins": [
+    {
+      "name": "development-workflow",
+      "description": "A plugin to help developers with their workflow, including code generation, debugging, and documentation.",
+      "source": "./plugins/development-workflow",
+      "category": "development"
+    },
+    {
+      "name": "video-creation",
+      "description": "AI video generation pipeline: storyboard, keyframe images, video synthesis, and HTML gallery. Powered by xskills.ai.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Jeff Pegg",
+        "email": "owner@jpegg.dev"
+      },
+      "source": "./plugins/video-creation",
+      "category": "video"
+    }
+  ]
 }

@@ -79,6 +79,5 @@ After all tasks complete and verified:
 ## Integration
 
 **Required workflow skills:**
-- **jpegg:worktree** - REQUIRED: Set up isolated workspace before starting
 - **jpegg:blueprint** - Creates the plan this skill executes
 - **jpegg:wrap-up** - Complete development after all tasks

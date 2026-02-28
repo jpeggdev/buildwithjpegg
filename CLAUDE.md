@@ -17,27 +17,18 @@ Complete software development workflow with composable skills and automatic invo
 - **Core flow:** evaluate -> blueprint -> delegate/build -> test-first -> seek-review -> wrap-up
 - **Also supports:** Codex and OpenCode (see plugin README)
 
-### video-creation (v1.1.0)
-
-AI video generation pipeline powered by xskills.ai. Storyboard planning, keyframe images, video synthesis, HTML gallery.
-
-- **Path:** `plugins/video-creation/`
-- **Skills:** create-storyboard, create-image, create-video, video-pipeline
-- **Requires:** `XSKILL_API_KEY` environment variable, Python 3, curl
-- **Models:** Flux 2 Flash, Seedream 4.5, Nano Banana Pro, Gemini 3 Pro (images); Seedance 2.0, Sora 2, WAN 2.6, Hailuo 2.3 (video)
-
 ## Structure
 
 ```
 .claude-plugin/marketplace.json  -- Plugin registry manifest
 plugins/
   development-workflow/          -- Development workflow plugin source
-  video-creation/                -- Video creation plugin source
 ```
 
 ## Key File: marketplace.json
 
 The manifest at `.claude-plugin/marketplace.json` defines all registered plugins. Each entry has:
+
 - `name` -- plugin identifier
 - `description` -- short description
 - `source` -- local path to plugin directory
