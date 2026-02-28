@@ -230,7 +230,6 @@ Done!
 ## Integration
 
 **Required workflow skills:**
-- **jpegg:worktree** - REQUIRED: Set up isolated workspace before starting
 - **jpegg:blueprint** - Creates the plan this skill executes
 - **jpegg:seek-review** - Code review template for reviewer subagents
 - **jpegg:wrap-up** - Complete development after all tasks

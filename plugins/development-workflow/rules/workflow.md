@@ -10,17 +10,16 @@ For any new feature or fix, skills fire in this order — do not skip steps:
 
 Within each implementation chunk:
 
-4. **`jpegg:worktree`** — before writing code. Creates an isolated workspace for the branch.
-5. **`jpegg:test-first`** — before writing implementation code. Tests first, always.
-6. **`jpegg:pre-ship`** — before claiming done. Runs verification commands, reads actual output.
-7. **`jpegg:seek-review`** — before opening the PR. Internal review pass first.
-8. **`jpegg:draft-prs`** — when creating a PR in a stack. Downstream PRs are draft; promote on base merge.
-9. **`jpegg:ci-loop`** — after PR creation. Monitors CI and fixes failures before reporting back.
-10. **`jpegg:pr-stack`** — after every PR creation or merge. Updates `.claude/stack.json`.
+4. **`jpegg:test-first`** — before writing implementation code. Tests first, always.
+5. **`jpegg:pre-ship`** — before claiming done. Runs verification commands, reads actual output.
+6. **`jpegg:seek-review`** — before opening the PR. Internal review pass first.
+7. **`jpegg:draft-prs`** — when creating a PR in a stack. Downstream PRs are draft; promote on base merge.
+8. **`jpegg:ci-loop`** — after PR creation. Monitors CI and fixes failures before reporting back.
+9. **`jpegg:pr-stack`** — after every PR creation or merge. Updates `.claude/stack.json`.
 
 When receiving feedback on an open PR:
 
-11. **`jpegg:handle-review`** — fires before implementing any review comment. Evaluates feedback before acting.
+10. **`jpegg:handle-review`** — fires before implementing any review comment. Evaluates feedback before acting.
 
 ## Stacked PR Workflow
 
