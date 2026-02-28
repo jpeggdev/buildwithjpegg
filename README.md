@@ -14,7 +14,6 @@ Then install any plugin:
 
 ```bash
 /plugin install development-workflow
-/plugin install video-creation
 ```
 
 ## Available Plugins
@@ -39,21 +38,6 @@ Because skills trigger automatically, you don't need to do anything special -- d
 **Components:** 18 skills, 3 slash commands, 1 agent (code-reviewer), 8 rules, session-start hook
 
 Also supports Codex and OpenCode -- see [plugin README](plugins/development-workflow) for setup.
-
-### [video-creation](plugins/video-creation)
-
-AI video generation pipeline powered by [xskills.ai](https://xskills.ai). Go from concept to finished video with storyboard planning, keyframe image generation, video synthesis, and an HTML gallery of all assets.
-
-**Skills:**
-
-| Skill | Purpose |
-|-|-|
-| `create-storyboard` | Plan a video as timed shots with camera, scene, action, and image prompts |
-| `create-image` | Generate keyframe images (Flux 2 Flash, Seedream, Nano Banana Pro, Gemini 3 Pro) |
-| `create-video` | Generate video from images/prompts (Seedance 2.0, Sora 2, WAN 2.6, Hailuo 2.3) |
-| `video-pipeline` | Orchestrate the full workflow: storyboard -> images -> video -> gallery |
-
-**Requires:** `XSKILL_API_KEY` environment variable, Python 3, curl
 
 ## License
 
