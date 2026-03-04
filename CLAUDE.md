@@ -8,12 +8,12 @@ A marketplace registry for Claude Code plugins. This is a monorepo -- plugin sou
 
 ## Plugins
 
-### development-workflow (v1.0.1)
+### development-workflow (v1.0.2)
 
 Complete software development workflow with composable skills and automatic invocation. TDD, debugging, collaboration patterns, code review, CI/CD, stacked PRs.
 
 - **Path:** `plugins/development-workflow/`
-- **Components:** 18 skills, 3 slash commands (`/evaluate`, `/write-blueprint`, `/run-build`), 1 agent (code-reviewer), 8 rules, session-start hook
+- **Components:** 17 skills, 3 slash commands (`/evaluate`, `/write-blueprint`, `/run-build`), 1 agent (code-reviewer), 8 rules, session-start hook
 - **Core flow:** evaluate -> blueprint -> delegate/build -> test-first -> seek-review -> wrap-up
 - **Also supports:** Codex and OpenCode (see plugin README)
 

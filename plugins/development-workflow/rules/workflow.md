@@ -39,6 +39,7 @@ When receiving feedback on an open PR:
 ## After a PR is Merged
 
 When the user reports a PR is merged:
+
 1. `git fetch`
 2. Rebase the next branch in the stack onto `main`
 3. `git push --force-with-lease --force-if-includes`
