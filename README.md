@@ -33,9 +33,9 @@ Because skills trigger automatically, you don't need to do anything special -- d
 5. **seek-review** -- Reviews against plan, reports issues by severity
 6. **wrap-up** -- Verifies tests, presents merge/PR/keep/discard options
 
-**Also includes:** root-cause debugging, CI monitoring (ci-loop), stacked PR management (draft-prs, pr-stack), automated releases (auto-release), worktree isolation, skill creation (craft-skill), and onboarding.
+**Also includes:** root-cause debugging, CI monitoring (ci-loop), stacked PR management (draft-prs, pr-stack), automated releases (auto-release), skill creation (craft-skill), and onboarding.
 
-**Components:** 18 skills, 3 slash commands, 1 agent (code-reviewer), 8 rules, session-start hook
+**Components:** 17 skills, 3 slash commands, 1 agent (code-reviewer), 8 rules, session-start hook
 
 Also supports Codex and OpenCode -- see [plugin README](plugins/development-workflow) for setup.
 

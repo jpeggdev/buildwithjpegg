@@ -58,13 +58,13 @@ Fetch and follow instructions from https://raw.githubusercontent.com/jpeggdev/bu
 
 2. **blueprint** - Activates with approved design. Breaks work into bite-sized tasks (2-5 minutes each). Every task has exact file paths, complete code, verification steps.
 
-4. **delegate** or **build** - Activates with plan. Dispatches fresh subagent per task with two-stage review (spec compliance, then code quality), or executes in batches with human checkpoints.
+3. **delegate** or **build** - Activates with plan. Dispatches fresh subagent per task with two-stage review (spec compliance, then code quality), or executes in batches with human checkpoints.
 
-5. **test-first** - Activates during implementation. Enforces RED-GREEN-REFACTOR: write failing test, watch it fail, write minimal code, watch it pass, commit.
+4. **test-first** - Activates during implementation. Enforces RED-GREEN-REFACTOR: write failing test, watch it fail, write minimal code, watch it pass, commit.
 
-6. **seek-review** - Activates between tasks. Reviews against plan, reports issues by severity. Critical issues block progress.
+5. **seek-review** - Activates between tasks. Reviews against plan, reports issues by severity. Critical issues block progress.
 
-7. **wrap-up** - Activates when tasks complete. Verifies tests, presents options (merge/PR/keep/discard).
+6. **wrap-up** - Activates when tasks complete. Verifies tests, presents options (merge/PR/keep/discard).
 
 **The agent checks for relevant skills before any task.** Mandatory workflows, not suggestions.
 
@@ -73,13 +73,16 @@ Fetch and follow instructions from https://raw.githubusercontent.com/jpeggdev/bu
 ### Skills Library
 
 **Testing**
+
 - **test-first** - RED-GREEN-REFACTOR cycle (includes testing anti-patterns reference)
 
 **Debugging**
+
 - **root-cause** - 4-phase root cause process (includes root-cause-tracing, defense-in-depth, condition-based-waiting techniques)
 - **pre-ship** - Ensure it's actually fixed
 
 **Collaboration**
+
 - **evaluate** - Socratic design refinement
 - **blueprint** - Detailed implementation plans
 - **build** - Batch execution with checkpoints
@@ -90,12 +93,14 @@ Fetch and follow instructions from https://raw.githubusercontent.com/jpeggdev/bu
 - **delegate** - Fast iteration with two-stage review (spec compliance, then code quality)
 
 **CI/CD**
+
 - **ci-loop** - Monitor CI and automatically fix failures after PR creation
 - **draft-prs** - Manage draft status for stacked PRs
 - **pr-stack** - Track stacked PR state across sessions
 - **auto-release** - Set up semantic versioning and automated releases
 
 **Meta**
+
 - **craft-skill** - Create new skills following best practices (includes testing methodology)
 - **onboard** - Introduction to the skills system
 
