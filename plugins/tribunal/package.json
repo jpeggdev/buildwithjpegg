@@ -1,0 +1,44 @@
+{
+  "name": "tribunal",
+  "version": "0.10.0",
+  "description": "Cross-platform installer for Tribunal — multi-agent orchestration for Claude Code, Codex CLI, and Gemini CLI",
+  "bin": {
+    "tribunal": "cli/tribunal.js"
+  },
+  "files": [
+    "cli/",
+    "lib/",
+    "agents/",
+    "skills/",
+    "commands/",
+    "rubrics/",
+    "knowledge/",
+    "scripts/",
+    "bin/",
+    "templates/",
+    "guides/",
+    ".codex/",
+    "ORCHESTRATION.md",
+    "AGENTS.md",
+    "GEMINI.md",
+    "gemini-extension.json"
+  ],
+  "keywords": [
+    "claude-code",
+    "codex-cli",
+    "gemini-cli",
+    "agents",
+    "orchestration",
+    "tdd",
+    "quality-gates",
+    "tribunal"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jpeggdev/tribunal"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,71 @@
+# Update Tribunal
+
+> **Note**: `/tribunal-update-version` is preserved as a legacy alias for `/update`.
+
+> **v1.0.0+**: Plugin-based installations receive automatic updates via the marketplace. The npm commands below apply only to the legacy npm v0.9.0 installation. Legacy npm users should migrate via `/migrate`.
+
+Update tribunal to the latest version, refresh component files, and re-detect project context.
+
+## Usage
+
+```text
+/update
+```
+
+## Steps
+
+### 1. Check Current Version
+
+- Read `.tribunal/project-profile.json` and extract `tribunal_version`
+- If the file doesn't exist, stop and tell the user:
+  > No project profile found. Run `/setup` first to initialize tribunal.
+- Display the current version to the user
+
+### 2. Fetch Latest Version
+
+- Run `npm view tribunal version` to get the latest published version
+- Compare current vs. latest:
+  - **If current == latest**: tell the user they're already up to date and stop
+  - **If current < latest**: continue to the next step
+
+### 3. Show What's New
+
+- Run `npx tribunal@latest changelog --from <current-version>` to show changes between versions
+- If that fails, try `npx tribunal@latest changelog` and filter entries after the current version
+- Highlight any **BREAKING CHANGES** prominently if present
+- Show a summary of new features, fixes, and new components
+
+### 4. Update Files
+
+- Run `npx tribunal@latest install` to refresh all component files
+- This uses skip-if-exists semantics — user customizations in CLAUDE.md, agents, etc. are preserved
+- New files (new skills, commands, agents, guides) will be added
+- Existing tribunal-shipped files will be refreshed to latest versions
+
+### 5. Re-detect Project Context
+
+- Re-run project detection from the setup flow:
+  - Language, framework, test runner, linter, formatter, package manager, type checker, CI, git hooks
+- Compare new detection results against `detection` in the existing project profile
+- If changes are detected (e.g., project switched from Jest to Vitest):
+  - Show what changed
+  - Ask user if they want to re-customize affected files (e.g., update coverage commands in CLAUDE.md)
+  - If yes, apply the same customization logic from `/setup`
+
+### 6. Update Project Profile
+
+- Update `.tribunal/project-profile.json`:
+  - `tribunal_version` → set to new version
+  - `updated_at` → set to current ISO 8601 timestamp
+  - `detection` → refresh if project context changed (preserve if unchanged)
+- Preserve all other fields (`installed_at`, `choices`, `commands`, etc.)
+
+### 7. Summary
+
+- Print what was updated:
+  - Version change (e.g., `0.6.0 → 0.7.0`)
+  - Number of files refreshed or added
+  - Any new skills, commands, or agents that were added
+  - Any project detection changes
+- If there were breaking changes, remind the user to review them
+- Suggest reviewing the changelog for new features to take advantage of

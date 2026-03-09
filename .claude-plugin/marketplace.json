@@ -19,8 +19,9 @@
     {
       "name": "tribunal",
       "description": "Multi-agent orchestration framework — 18 agents, 9-phase workflow, quality gates, TDD enforcement, and cross-CLI support.",
-      "source": "github:jpeggdev/tribunal",
-      "category": "development"
+      "source": "./plugins/tribunal",
+      "category": "development",
+      "homepage": "https://github.com/jpeggdev/tribunal"
     }
   ]
 }
