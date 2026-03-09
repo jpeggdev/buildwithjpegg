@@ -1,0 +1,10 @@
+{
+  "name": "tribunal",
+  "version": "0.10.0",
+  "description": "Multi-agent orchestration framework — debate-driven design, intelligent agent selection, layered configuration",
+  "author": { "name": "jpeggdev" },
+  "homepage": "https://github.com/jpeggdev/tribunal",
+  "repository": "https://github.com/jpeggdev/tribunal",
+  "license": "MIT",
+  "keywords": ["orchestration", "agents", "tdd", "quality-gates", "tribunal"]
+}

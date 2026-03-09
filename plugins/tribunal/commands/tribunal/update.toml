@@ -1,0 +1,7 @@
+description = "Update tribunal to the latest version"
+prompt = """Invoke the tribunal update skill. The user wants to update tribunal.
+
+Arguments provided by the user: {{args}}
+
+Check for new versions, show changelog, and update all component files while preserving customizations.
+"""
