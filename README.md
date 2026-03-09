@@ -39,6 +39,28 @@ Because skills trigger automatically, you don't need to do anything special -- d
 
 Also supports Codex and OpenCode -- see [plugin README](plugins/development-workflow) for setup.
 
+### [tribunal](https://github.com/jpeggdev/tribunal)
+
+Multi-agent orchestration framework for Claude Code, Codex CLI, and Gemini CLI. Provides 18 specialized agents, a 9-phase development workflow, and quality gates that enforce TDD, coverage thresholds, and spec-driven development.
+
+**The pipeline:**
+
+1. **Research** -- Gather context and requirements
+2. **Brainstorm** -- Multi-agent debate to explore design alternatives
+3. **Design Review Gate** -- 5-agent parallel review (PM, Architect, Designer, Security, CTO)
+4. **Plan** -- Break work into implementation units
+5. **Plan Review Gate** -- 3 adversarial reviewers (Feasibility, Completeness, Scope)
+6. **Execute** -- 4-phase loop per work unit (Implement, Validate, Adversarial Review, Commit)
+7. **Final Review** -- Cross-check against requirements
+8. **Self-Reflect** -- Extract learnings into knowledge base
+9. **Ship** -- PR creation with coverage enforcement
+
+**Also includes:** intelligent agent selection with decay scoring, layered config (tribunal.yaml), cross-CLI support, migration tools, and diagnostic checks.
+
+**Components:** 16 skills, 19 commands, 18 agents, 8 rubrics, session-start hook
+
+See [tribunal repo](https://github.com/jpeggdev/tribunal) for setup and usage.
+
 ## License
 
 MIT -- see [LICENSE](LICENSE) for details.
