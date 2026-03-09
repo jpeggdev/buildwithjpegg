@@ -15,6 +15,12 @@
       "description": "A plugin to help developers with their workflow, including code generation, debugging, and documentation.",
       "source": "./plugins/development-workflow",
       "category": "development"
+    },
+    {
+      "name": "tribunal",
+      "description": "Multi-agent orchestration framework — 18 agents, 9-phase workflow, quality gates, TDD enforcement, and cross-CLI support.",
+      "source": "github:jpeggdev/tribunal",
+      "category": "development"
     }
   ]
 }
