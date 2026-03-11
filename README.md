@@ -1,6 +1,6 @@
 # buildwithjpegg Marketplace
 
-A plugin marketplace for Claude Code. Browse, install, and manage plugins for development workflows and AI video creation.
+A plugin marketplace for Claude Code. Browse, install, and manage plugins for development workflows and AI code planning and reviews.
 
 ## Getting Started
 
